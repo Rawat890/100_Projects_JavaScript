@@ -22,11 +22,16 @@ async function getJoke() {
   const response = await promise();
   const data = await response
 
+  for (const element of data) {
+    console.log(element)
+  }
+
   const jokeData = Object.values(data);
   console.log(jokeData)
 
   jokePunchLine.textContent = jokeData[2];
   jokeSetUp.textContent = jokeData[1];
+
 
 }
 
