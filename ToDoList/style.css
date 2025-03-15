@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(#ffd55c 50%, #5a95ff 50%);
+}
+
+.app {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: min(95vw, 500px);
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 1.875rem;
+}
+
+.container {
+  padding: 2em 2.5em;
+  background-color: #f1f8fb;
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+#wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8fr 4fr; /*means input takes 8 fraction of available space and button takes 4 fraction*/
+  gap: 1em;
+}
+
+#wrapper input {
+  width: 100%;
+  background-color: transparent;
+  color: #111111;
+  padding: 1em 0.5em;
+  border: 2px solid #d1d3d4;
+  border: none;
+}
+
+#wrapper input:focus {
+  outline: none;
+  border-bottom: 2px solid #5a95ff;
+}
+
+#wrapper button {
+  position: relative;
+  border-radius: 0.5em;
+  font-weight: 700;
+  font-size: 1em;
+  background-color: #5a95ff;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#tasks {
+  margin-top: 1em;
+  border-radius: 0, 5em;
+  width: 100%;
+  position: relative;
+  padding: 1e, 0.5em;
+}
+
+.task {
+  background-color: #ffffff;
+  padding: 0.8em 1em;
+  display: grid;
+  grid-template-columns: 1fr 8fr 2fr 2fr;
+  gap: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  align-items: center;
+}
+
+/*first child is p*/
+.task:not(:first-child) {
+  margin-top: 1em;
+}
+
+.task input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid #e1e1e1;
+}
+
+.task input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.task input[type="checkbox"]:checked {
+  background-color: #5a95ff;
+  border-color: #5a95ff;
+}
+
+.task input[type="checkbox"]:checked:before {
+  position: absolute;
+  content: "\f00c";
+  color: #ffffff;
+  font-size: 0.8em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 900;
+}
+
+.task span {
+  font: 0.9em;
+  font-weight: 900;
+  word-break: break-all;
+}
+
+.task button {
+  columns: #ffffff;
+  width: 70%;
+  border-radius: 0.6em;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0.5em;
+}
+
+.edit {
+  background-color: #5a95ff;
+}
+
+.delete {
+  background-color: red;
+}
+
+#pending-tasks span {
+  color: #5a95ff;
+}
+
+.completed {
+  color: #a0a0a0;
+  text-decoration: line-through;
+}
+#error {
+  text-align: center;
+  background-color: white;
+  color: red;
+  margin-top: 1.5em;
+  border-radius: 0.8em;
+  padding: 1em;
+  display: none;
+}
